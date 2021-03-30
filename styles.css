@@ -1,25 +1,43 @@
+/* General */
+
+.container{
+    display: Flex;
+}
+
 body{
     font-family: "Open Sans", Roboto,Verdana, Geneva, sans-serif;
     margin: 0;
 }
+
 p{
     font-size: 14px;
 }
+
+header{
+    display:flex;
+    padding:15px;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+header h1{
+    margin:0 auto;
+}
+
 #map {
     height: calc(100vh - 114px);;
     width:100%;
     margin-right:40px;
 }
+
 .loading{
     text-align: center;
     width:100%;
     max-width:600px;
     margin:100px auto;
 }
-.loading p{
-    font-size:25px;
-}
-.map-and-list{
+
+.firstBlock{
     display:flex;
     flex-direction: row;
     position: relative;
@@ -27,21 +45,38 @@ p{
     margin-bottom:20px;
     background-color: #fff;
 }
-#street-view{
+
+/* StreetView */
+
+#streetView{
     height: auto;
     max-height:600px;
     order: 1;
     width: 100%;
     min-width: 320px;
 }
-#pano, #street-view-wrapper{
+#pano, #streetViewWrapper{
     max-height:600px;
     width: 100%;
     min-width: 320px;
     height: 100%;
 }
 
-#listing {
+#see-photo, #seeStreetView{
+    min-width:105px;
+}
+
+#streetView{
+    height: auto;
+    max-height: 600px;
+    order: 1;
+    width: 100%;
+    min-width: 320px;
+}
+
+/* Liste Restaurants */
+
+#scroll {
     width: 100%;
     height: calc(100vh - 156px);
     overflow: auto;
@@ -51,99 +86,62 @@ p{
     margin-bottom:10px;
 }
 
-#search{
-    position: absolute;
-}
-#locationField {
-    position: absolute;
-    width: 200px;
-    height: 30px;
-    left: 122px;
-    top: 21px;
-    z-index: 5;
-}
-#autocomplete-input, #autocompleteRestaurant-input{
-    font-size: 15px;
-    padding: 3px;
-    width: 100%;
-}
-#autocompleteRestaurant-input{
-    margin-top:10px;
-}
-#controls {
-    position: absolute;
-    left: 300px;
-    width: 140px;
-    top: 0px;
-    z-index: 5;
-    background-color: #fff;
-}
-
-#country {
-    width: 100%;
-}
-.placeIcon{
-    height:80px;
-}
-.placeIcon img {
-    width: 92px;
-    height: 80px;
-    margin-right: 15px;
-}
 #results .rating{
     font-size:20px;
 }
-.results-list{
+
+.filtre{
+    padding: 10px 0;
+    text-align: center;
+    color: #000;
+}
+
+.filtre label{
+    margin-right: 10px;
+}
+
+.listRestaurants{
     display:flex;
+    background: #1e8fbb;
     padding: 10px 0;
     border-bottom: 1px solid #f2f2f2;
 }
+
 .placeDetails{
     padding-right: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.results-list:hover{
-    background-color:#f2f2f2;;
+
+.listRestaurants:hover{
+    background-color:#71B1CD;;
 }
-.results-list:last-child{
+
+.listRestaurants:last-child{
     margin-bottom:10px;
 }
+
 #rating {
     font-size: 20px;
     font-family: Arial Unicode MS Verdana;
 }
-.iw_table_row {
-    height: 18px;
-}
-.iw_attribute_name {
-    font-weight: bold;
-    text-align: right;
-}
-.iw_table_icon {
-    text-align: right;
-}
+
+/* InfoWindows */
+
 #iw-icon{
     font-weight:bold
 }
-.profile-photo{
-    width: 35px;
-    height: 35px;
-    display: block;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-right:20px;
-}
-.review-title{
+
+/* Commentaires */
+
+.titreCommentaire{
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-#more{
-    display: none;
-}
-#more, #add-to-array, #add-restaurant{
+
+#addCommentaire, #addRestaurant{
     width: 90%;
     margin: 0 auto;
     color: #1e8fbb;
@@ -153,13 +151,11 @@ p{
     padding: 10px;
     font-size: 13px;
 }
-#more:hover, #add-to-array:hover, #add-restaurant:hover{
+
+#addCommentaire:hover, #addRestaurant:hover{
     color: #1e8fbb;
 }
-.container{
-    display: Flex;
 
-}
 .restaurant{
     width:70%;
     max-width:800px;
@@ -167,210 +163,174 @@ p{
     padding-left: 10px;
     padding-right: 10px;
 }
-.info-wrapper{
+
+.listInfo{
     min-width: 330px;
     width: 330px;
     background-color: #fff;
 }
-.map-wrapper{
+
+.mapWrap{
     min-width:320px;
     width: 100%;
     height:600px;
     padding:10px;
 }
-.restaurant-name{
+
+.nomRestaurant{
     color: #1e8fbb;
+    text-align: center;
 }
-#restaurant-info{
+
+#restaurantInfo{
     background-color: #fff;
     padding: 10px;
 }
+
 .rating{
     font-size:22px;
-    color: #1e8fbb;
+    color: orange;
 }
-.restaurant-reviews{
-    border-bottom: 1px solid #c8c9cb;
-}
-header{
-    display:flex;
-    padding:15px;
-    max-width: 1024px;
-    margin: 0 auto;
-}
-header h1{
-    margin:0 auto;
 
+.separator{
+    border-bottom: 3px solid #000000;
 }
-.sort{
-    padding: 10px 0;
+
+.auteurCommentaire{
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.restaurantDetails{
+    margin-bottom: 10px;
     text-align: center;
-    color: #000;
 }
-.sort label{
-    margin-right: 10px;
-}
-#info-window{
-    max-width:300px;
-}
-.restaurant-details{
-    margin:0;
-}
-#info-content .extra-details{
+
+#iwMap .details{
     color: #383838;
     font-weight: 300;
     font-size: 13px;
     max-width:300px;
 }
-#info-content .extra-details div{
+
+#iwMap .details div{
     padding-bottom:5px;
 }
-#iw-rating{
+
+#iwRating{
     color: #1e8fbb;
     font-size: 25px;
     text-align: center;
     font-weight:600;
     margin:0;
 }
-#iw-url {
+
+#iwUrl {
     font-size: 20px;
     text-align: center;
     margin: 5px 0 10px 0;
 }
 
-
-#iw-url a{
+#iwUrl a{
     color: #1e8fbb;
 }
 
-#info-content .gm-style .photo{
+#iwMap .gm-style{
     height: 190px;
     width: 300px;
 }
-/* add a review form */
 
-#add-review{
+/* liste commentaires */
+
+#addList{
     margin: 20px 0;
     display: flex;
     flex-direction: column;
 }
-#add-review input, #add-review textarea{
+
+#addList input, #addList textarea{
     margin-bottom:20px;
 }
 
-#your-review{
+#persoCommentaire{
     height: 70px;
     font-size: 12px;
     padding: 5px;
 }
-#your-rating{
+
+#persoNote{
     width: 50px;
     height: 20px;
     border-radius: unset;
     border: none;
 }
-.main-button{
-    color: #1e8fbb;
+
+.buttonCommentaire{
+    width: 100%;
     border: none;
+    background: white;
     border-radius: 5px;
     padding: 10px;
     font-size: 11px;
     height: 40px;
     min-width: 90px;
-    margin: 0 0 0 10px;
+    margin: auto;
 }
-.main-button a{
+
+.buttonCommentaire a{
     text-decoration: none;
-    color: #1e8fbb;
+    color: white;
 }
-#see-photo, #see-street-view{
-    min-width:105px;
-}
-#street-view{
-    height: auto;
-    max-height: 600px;
-    order: 1;
-    width: 100%;
-    min-width: 320px;
-}
-.review-header{
+
+.headerCommentaire{
     display:flex;
     justify-content: space-between;
 }
-#add-review label{
+
+#addList label{
     font-size: 12px;
     margin-bottom: 5px;
 }
-#add-review input{
+
+#addList input{
     height: 15px;
     padding: 5px;
     font-size: 13px;
     width: 250px;
 }
-#add-review textarea, #add-review input{
+
+#addList textarea, #addList input{
     border: 1px solid #c8c9cb;
 }
 
-#info-content-small{
-    font-size:13px;
-}
-#iw-icon-small .gm-style .photo{
-    width:50px;
-    height:35px;
-}
-#iw-icon .photo{
+#iwIcon{
     max-width: 300px;
     max-height: 200px;
 }
-#photo{
-    order: 2;
-}
-#info-content-small .photo{
-    height: 35px;
-    width: 50px;
-}
 
-#iw-url-small, .reviews-link{
-    text-decoration: none;
-    color: #1e8fbb;
-}
-.reviews-link:hover{
-    text-decoration: underline;
-}
-
-#iw-reviews{
-    color: #1e8fbb;
-    text-decoration:none;
-    font-size: 16px;
-    text-align: center;
-    display: block;
-    padding-top: 10px;
-}
-#iw-reviews:hover{
-    color: #1e8fbb;
-    text-decoration:underline;
-}
-.button-menu{
+.buttonClass{
     display:flex;
     justify-content: flex-end;
 }
+
 .heading h2{
     margin:0;
 }
 
-/* add new restaurant form info window */
-#form-add-restaurant{
-    max-width: 300px;
+/* InfoWindows ajout restaurant */
 
+#formAjoutRestaurant{
+    max-width: 300px;
 }
-#form-add-restaurant input{
+
+#formAjoutRestaurant input{
     height: 20px;
     width: 100%;
     max-width: 280px;
     margin-bottom: 10px;
     font-size: 12px;
 }
-#form-add-restaurant select{
+#formAjoutRestaurant select{
     height: 20px;
     width: 50px;
     margin-bottom: 10px;
@@ -378,51 +338,49 @@ header h1{
     border-radius: unset;
     border: none;
 }
-.add-res-heading{
+
+.headAjoutRestaurant{
     color: #1e8fbb;
 }
-#add-restaurant {
+
+#addRestaurant {
     width: 95%;
 }
 
+/* media queries pour telephone */
 
-/* media queries */
 @media screen and (max-width:768px){
     #map{
         height:100%;
         margin-bottom:10px;
     }
-    #street-view{
+
+    #streetView{
         height:300px;
         margin-bottom: 10px;
         overflow: hidden;
     }
-    .info-wrapper{
+    .listInfo{
         width: auto;
         margin-right: 0;
     }
-    #locationField{
-        left:132px;
-        top:14px;
-        width:170px;
-    }
-    .container, .map-and-list, header{
+
+    .container, .firstBlock, header{
         flex-direction: column;
     }
+
     .restaurant{
         order:2;
         width:100%;
         padding:0;
         margin:0;
     }
+
     .map-wrapper{
         padding:0;
     }
-    .logo{
-        text-align: center;
-    }
-    #iw-icon .photo{
+
+    #iwIcon{
         display:none;
     }
-
 }
